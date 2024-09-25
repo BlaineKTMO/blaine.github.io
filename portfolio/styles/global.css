@@ -1,0 +1,176 @@
+/* styles/global.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+#about {
+  display: inline-block;
+}
+
+.typed-text {
+  color: #fff;
+  display: inline;
+}
+
+.typed-cursor {
+  font-size: 3em;
+  color: #fff;
+  display: inline;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Fullpage.js styles */
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+/* Static horizontal line at the bottom */
+hr.static-line {
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  border: none;
+  height: 2px;
+  background-color: #fff;
+}
+
+/* Scrolling text animation */
+.scrolling-text {
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  transform: translateY(-50%);
+  transform: translateX(0%);
+  width: 100%;
+  right: 0;
+  top: 50%;
+  font-size: 5em;
+}
+
+.scrolling-text span {
+  display: inline-block;
+  align-self: center;
+  padding: 0%;
+  font-size: 40vw;
+  animation: scroll 20s linear infinite;
+}
+
+.overlay {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  font-size: 2em;
+  text-align: center;
+  padding: 0px;
+  box-sizing: border-box;
+  animation: fade-in 2s forwards;
+}
+
+.overlay-l {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  font-size: 2em;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  animation: fade-in 2s forwards;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Custom properties for mouse position */
+:root {
+  --mouse-x: 0px;
+  --mouse-y: 0px;
+}
+
+.text-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: left;
+  padding-left: 10%;
+  padding-bottom: 15%;
+  font-size: 2em;
+}
+
+/* Mouse position display */
+.mouse-position {
+  position: absolute;
+  word-wrap: normal;
+  width: 120%;
+  height: 120%;
+  bottom: 0px;
+  right: -30px;
+  background-color: rgba(158, 141, 175, 0.7);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 40px;
+  font-family: 'Merriweather';
+  will-change: transform;
+  transform: translate(var(--mouse-x)+'%', var(--mouse-y)+'%'), scale3d(1, 1, 1);
+}

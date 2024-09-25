@@ -19,6 +19,7 @@ Gemfile.lock
 
 .devcontainer/
 .next/
-node-modules/
+node_modules/
 package-lock.json
 server.js
+.github/
