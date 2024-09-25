@@ -18,19 +18,18 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '20'
-      - name: Navigate to direcotry
-        run: ls -la
-      - name: Debug
-        run: cd portfolio && ls -la
+
+      - name: Navigate to directory
+        run: cd portfolio
 
       - name: Install dependencies
-        run: next install
+        run: npm install
 
       - name: Build the project
-        run: next run build
+        run: npm run build
 
       - name: Export the static site
-        run: next run export
+        run: npm run export
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
