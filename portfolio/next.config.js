@@ -1,6 +1,6 @@
 module.exports = {
     reactStrictMode: true,
     output: 'export',
-    basePath: '/',
-    assetPrefix: '/',
+    basePath: '/portfolio',
+    assetPrefix: '/portfolio/',
 };

@@ -1,5 +1,5 @@
 {
-    "name": "my-nextjs-app",
+    "name": "portfolio",
     "version": "1.0.0",
     "scripts": {
         "dev": "next dev",
@@ -14,6 +14,7 @@
         "fullpage.js": "^4.0.29",
         "my-nextjs-app": "file:",
         "next": "latest",
+        "portfolio": "file:",
         "react": "latest",
         "react-dom": "latest",
         "typed.js": "^2.1.0"
