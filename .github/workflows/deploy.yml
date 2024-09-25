@@ -20,13 +20,13 @@ jobs:
           node-version: '14'
 
       - name: Install dependencies
-        run: npm install
+        run: next install
 
       - name: Build the project
-        run: npm run build
+        run: next run build
 
       - name: Export the static site
-        run: npm run export
+        run: next run export
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
