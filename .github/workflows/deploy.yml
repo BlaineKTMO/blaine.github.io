@@ -20,7 +20,7 @@ jobs:
           node-version: '20'
 
       - name: Navigate to directory
-        run: cd portfolio && ls -la && cd ~/work/portfolio && ls -la
+        run: cd portfolio && ls -la && cd ~/work/portfolio/portfolio && ls -la
 
       - name: Install dependencies
         run: npm install
