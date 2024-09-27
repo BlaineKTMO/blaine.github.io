@@ -23,7 +23,7 @@ jobs:
         run: cd portfolio && ls -la && cd ~/work/portfolio/portfolio && ls -la
 
       - name: Install dependencies
-        run: npm install
+        run: find . ! -path "*/node_modules/*" -name "package.json" -execdir npm install \;
 
       - name: Build the project
         run: npm run build
