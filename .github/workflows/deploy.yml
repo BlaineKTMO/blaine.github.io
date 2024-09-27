@@ -29,7 +29,7 @@ jobs:
         run: find . ! -path "*/node_modules/*" -name "package.json" -execdir npm run build \;
 
       - name: Move out files
-        run: cp ./portfolio/out ./out && ls -la ./out && pwd
+        run: cp -r ./portfolio/out ./out && ls -la ./out && pwd && cd out && ls -la
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
