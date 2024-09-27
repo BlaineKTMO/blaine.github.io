@@ -22,9 +22,6 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Navigate to directory
-        run: cd portfolio && ls -la && cd ~/work/portfolio/portfolio && ls -la
-
       - name: Install dependencies
         run: find . ! -path "*/node_modules/*" -name "package.json" -execdir npm install \;
 
