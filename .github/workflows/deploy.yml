@@ -29,7 +29,7 @@ jobs:
         run: find . ! -path "*/node_modules/*" -name "package.json" -execdir npm build \;
 
       - name: Export the static site
-        run: npm run export
+        run: find . ! -path "*/node_modules/*" -name "package.json" -execdir npm run export \;
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
