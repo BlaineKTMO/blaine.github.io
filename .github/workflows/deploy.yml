@@ -28,9 +28,6 @@ jobs:
       - name: Build the project
         run: find . ! -path "*/node_modules/*" -name "package.json" -execdir npm run build \;
 
-      - name: Export the static site
-        run: find . ! -path "*/node_modules/*" -name "package.json" -execdir npm run export \;
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
