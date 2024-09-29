@@ -1,6 +1,6 @@
 module.exports = {
     reactStrictMode: true,
     output: 'export',
-    basePath: '/blaine.github.io',
-    assetPrefix: '/blaine.github.io/',
+    basePath: '/blainektmo.github.io',
+    assetPrefix: '/blainektmo.github.io',
 };
