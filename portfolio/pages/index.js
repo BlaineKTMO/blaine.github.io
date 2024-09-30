@@ -59,6 +59,20 @@ export default function Home() {
         };
     }, []);
 
+    const [terminalLines, setTerminalLines] = useState([
+        "Welcome to my portfolio site!",
+        "You can explore my projects and skills here.",
+        "Type 'help' to see available commands."
+    ]);
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            const newLine = event.target.value;
+            setTerminalLines([...terminalLines, newLine]);
+            event.target.value = '';
+        }
+    };
+
     return (
         <div>
             <Head>
@@ -68,14 +82,37 @@ export default function Home() {
             </Head>
             <ReactFullpage
                 navigation
-                sectionsColor={["#000000", "#000000", "#000000"]}
+                sectionsColor={["#EDE8F5", "#EDE8F5", "#EDE8F5"]}
                 render={({ state, fullpageApi }) => {
                     return (
                         <ReactFullpage.Wrapper>
                             <div className="section">
                                 <section id="about">
-                                    <h1 ref={typedElement} className="typed-text"></h1>
+                                    <div className='overlay-top'>
+                                        <h1 ref={typedElement} className="typed-text"></h1>
+                                    </div>
                                 </section>
+                                <div className="terminal">
+                                    <div className="terminal-header">
+                                        <div className="terminal-buttons">
+                                            <span className="terminal-button red"></span>
+                                            <span className="terminal-button yellow"></span>
+                                            <span className="terminal-button green"></span>
+                                        </div>
+                                        <div className="terminal-title">Terminal</div>
+                                    </div>
+                                    <div className="terminal-body">
+                                        {terminalLines.map((line, index) => (
+                                            <p key={index} className="terminal-line">{line}</p>
+                                        ))}
+                                        <input
+                                            type="text"
+                                            className="terminal-input"
+                                            onKeyDown={handleKeyDown}
+                                            autoFocus
+                                        />
+                                    </div>
+                                </div>
                             </div>
                             <div className="section">
                                 <h2>Slide 2</h2>
