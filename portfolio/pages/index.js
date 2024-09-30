@@ -5,6 +5,7 @@ import ReactFullpage from '@fullpage/react-fullpage';
 
 export default function Home() {
     const typedElement = useRef(null);
+    const inputRef = useRef(null);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
@@ -60,9 +61,9 @@ export default function Home() {
     }, []);
 
     const [terminalLines, setTerminalLines] = useState([
-        "> Welcome to my portfolio site!",
-        "> You can explore my projects and skills here.",
-        "> Type 'help' to see available commands."
+        "Welcome to my portfolio site!",
+        "You can explore my projects and skills here.",
+        "Type 'help' to see available commands.",
     ]);
 
     const handleKeyDown = (event) => {
@@ -91,6 +92,11 @@ export default function Home() {
         setTerminalLines([...terminalLines, `> ${command}`, response]);
     };
 
+    const focusInput = () => {
+        document.getElementById('terminal-input').focus();
+    };
+
+
     return (
         <div>
             <Head>
@@ -110,7 +116,7 @@ export default function Home() {
                                         <h1 ref={typedElement} className="typed-text"></h1>
                                     </div>
                                 </section>
-                                <div className="terminal">
+                                <div className="terminal" onClick={focusInput}>
                                     <div className="terminal-header">
                                         <div className="terminal-buttons">
                                             <span className="terminal-button red"></span>
@@ -125,6 +131,7 @@ export default function Home() {
                                         ))}
                                         <input
                                             type="text"
+                                            id="terminal-input"
                                             className="terminal-input"
                                             onKeyDown={handleKeyDown}
                                             autoFocus
