@@ -20,5 +20,4 @@ Gemfile.lock
 .devcontainer/
 .next/
 node_modules/
-package-lock.json
 server.js
