@@ -21,3 +21,4 @@ Gemfile.lock
 .next/
 node_modules/
 server.js
+/portfolio/out
