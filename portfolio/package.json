@@ -6,7 +6,7 @@
         "build": "next build",
         "start": "next start",
         "export": "next export",
-        "deploy": "next build && next export && gh-pages -d out"
+        "deploy": "next build && gh-pages -d out --nojekyll --cname blainektmo.github.io"
     },
     "dependencies": {
         "@babel/polyfill": "^7.12.1",
