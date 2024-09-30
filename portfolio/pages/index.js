@@ -60,17 +60,35 @@ export default function Home() {
     }, []);
 
     const [terminalLines, setTerminalLines] = useState([
-        "Welcome to my portfolio site!",
-        "You can explore my projects and skills here.",
-        "Type 'help' to see available commands."
+        "> Welcome to my portfolio site!",
+        "> You can explore my projects and skills here.",
+        "> Type 'help' to see available commands."
     ]);
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
             const newLine = event.target.value;
-            setTerminalLines([...terminalLines, newLine]);
+            processCommand(newLine);
             event.target.value = '';
         }
+    };
+
+    const processCommand = (command) => {
+        let response;
+        switch (command.toLowerCase()) {
+            case 'help':
+                response = "Available commands: help, about, projects";
+                break;
+            case 'about':
+                response = "This is a portfolio site created by [Your Name].";
+                break;
+            case 'projects':
+                response = "Projects: Project1, Project2, Project3";
+                break;
+            default:
+                response = `Command not found: ${command}`;
+        }
+        setTerminalLines([...terminalLines, `> ${command}`, response]);
     };
 
     return (
