@@ -70,7 +70,7 @@ jobs:
       - name: Install dependencies
         run: cd portfolio && ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
-        run: cd portfolio && npm run next build
+        run: cd portfolio && npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
